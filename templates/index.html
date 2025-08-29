@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MATLADU.COM — Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="intro-body">
+  <div class="intro-card">
+    <h1>MATLADU.COM</h1>
+    <form id="introForm" action="/chat" method="get">
+      <input id="username" name="username" placeholder="Enter username" required />
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+</body>
+</html>

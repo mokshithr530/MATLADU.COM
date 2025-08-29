@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+  <!-- Top bar: server controls -->
+  <div id="serverControls">
+    <div class="sc-left">
+      <button id="createServerBtn">+ Create Server</button>
+      <input id="joinCodeInput" placeholder="Enter server code…" />
+      <button id="joinServerBtn">Join</button>
+    </div>
+    <div class="sc-right">
+      <span id="currentServer">No server</span>
+      <span id="usersOnline"></span>
+    </div>
+  </div>
+
+  <!-- Chat area -->
+  <div id="chatContainer">
+    <div id="chatBox"></div>
+
+    <!-- Reply preview -->
+    <div id="replyPreview" class="reply-preview" style="display:none;"></div>
+
+    <!-- Input row -->
+    <form id="messageForm" autocomplete="off">
+      <input type="text" id="messageInput" placeholder="Type a message…" required />
+      <input type="file" id="fileInput" hidden />
+      <button type="button" id="attachBtn">📎</button>
+      <button type="submit" id="sendBtn">Send</button>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
