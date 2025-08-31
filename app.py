@@ -150,5 +150,6 @@ def on_disconnect():
 
 # ---------- Main ----------
 if __name__ == "__main__":
-    print("✅ Server on http://127.0.0.1:5000")
-    socketio.run(app, host="127.0.0.1", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # use Render's port if set
+    print(f"✅ Server starting on port {port}...")
+    socketio.run(app, host="0.0.0.0", port=port)
