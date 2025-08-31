@@ -4,6 +4,7 @@ import string
 from flask import Flask, render_template, request, send_from_directory, jsonify
 from flask_socketio import SocketIO, emit, join_room
 from werkzeug.utils import secure_filename
+import eventlet
 
 # ---------- App setup ----------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
